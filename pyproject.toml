@@ -14,7 +14,7 @@ pyspellchecker = "^0.8.1"
 click = "^8.1.7"
 strsimpy = "^0.2.1"
 beautifulsoup4 = "^4.12.3"
-pymupdf = "^1.24.13"
+pdfplumber = "^0.11.4"
 
 
 [build-system]
