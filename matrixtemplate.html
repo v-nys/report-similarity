@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+
+<head>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <th>comparison between</th>
+            {% for student_name, _ in remarks|items %}
+            <th>{{student_name}}</th>
+            {% endfor %}
+        </tr>
+        {% for student_name, comparisons in remarks|items %}
+        <tr>
+            <th>{{ student_name }}</th>
+            {% for student_2_name, _ in remarks|items %}
+            {% if comparisons.get(student_2_name,(1,[])) %}
+            <td
+                style="background-color: hsl(calc({{ comparisons.get(student_2_name,(1,[]))[0] }} * 120), 100%, 50%)">
+                {% if comparisons.get(student_2_name,(1,[]))[1] %}
+                <ul>
+                    {% for comment in comparisons.get(student_2_name,(1,[]))[1] %}
+                    <li>
+                        {{ comment }}
+                    </li>
+                    {% endfor %}
+                </ul>
+                {% else %}
+                /
+                {% endif %}
+            </td>
+            {% else %}
+            <td>/</td>
+            {% endif %}
+            {% endfor %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+
+</html>
