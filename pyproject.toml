@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "report-similarity"
+version = "0.1.0"
+description = ""
+authors = ["Vincent Nys <vincentnys@gmail.com>"]
+license = "Unlicense"
+readme = "README.md"
+package-mode = false
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pypdf = "^5.1.0"
+Jinja2 = "^3.1.4"
+pyspellchecker = "^0.8.1"
+click = "^8.1.7"
+strsimpy = "^0.2.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
